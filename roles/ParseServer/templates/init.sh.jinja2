@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# 获取旧密码
+old_password=$(cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}')
+oldapp_password=$(cat /credentials/password.txt | awk 'NR==9' |awk -F ":" '{print $2}')
+
+# 生成新密码
+new_password=$(</dev/urandom tr -dc '12345qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c10)
+app_password=$(</dev/urandom tr -dc '12345qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c10)
+
+systemctl restart mongod
+sleep 10
+
+# 修改 mongodb 密码
+echo "
+use parse
+db.changeUserPassword('parse','$app_password')
+use admin
+db.changeUserPassword('root','$new_password')
+" | mongo -u root -p $old_password
+
+
+
+
+# 修改 password.txt root 密码
+sed -i "s/$old_password/$new_password/" /credentials/password.txt
+
+# 修改 password.txt parse 密码
+sed -i "s/$oldapp_password/$app_password/" /credentials/password.txt                                                                               
+
+# 修改 Parse 配置文件密码
+sed -i "s/$oldapp_password/$app_password/" /etc/parse-server/parse-server.json  
+
+systemctl restart parse-server
+
+sed -i 's/\/root\/init.sh//g' /etc/rc.local
+rm -rf /root/init.sh

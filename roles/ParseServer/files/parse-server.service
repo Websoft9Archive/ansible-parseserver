@@ -1,0 +1,16 @@
+[Unit]
+Description=Parse Server
+After=network.target
+After=mongod.service
+Requires=mongod.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/parse-server  /etc/parse-server/parse-server.json
+TimeoutStartSec=3600
+Restart=always
+RestartSec=10
+
+
+[Install]
+WantedBy=mongod.service
