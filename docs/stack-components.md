@@ -5,8 +5,9 @@
 Parse-Server部署包中不仅仅只有Parse-Server本身，还包含一序列支持Parse-Server运行所需的其他软件（这里称之为组件），下面列出主要组件名称、安装路径、配置文件地址等重要的信息：
 
 ### Parse-Server
-
-Parse-Server安装目录: 
+Parse-Server安装目录：/usr/lib/node_modules/parse-server
+Parse-Server配置文件目录：/etc/parse-server/parse-server.json
+Parse-Server日志文件目录：/var/log/parse-server
 
 ### MongoDB
 MongoDB存储目录：/data/mongo
