@@ -1,11 +1,11 @@
 - name: Import the public key used by the package management system
   apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+    url: https://www.mongodb.org/static/pgp/server-{{mongodb_ver}}.asc
+    state: present
 
 - name: Import Mongodb Repo
   apt_repository:
-    repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu {{ansible_distribution_release}}/mongodb-org/4.0 multiverse
+    repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu {{ansible_distribution_release}}/mongodb-org/{{mongodb_ver}} multiverse
     filename: mongodb-org-{{mongodb_ver}}
 
 - name: Install Mongodb 
