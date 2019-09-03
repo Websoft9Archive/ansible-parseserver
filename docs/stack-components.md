@@ -17,6 +17,7 @@ MongoDB存储目录：/data/mongo
 
 ### Nodejs
 Node configuration file: /usr/include/node/config.gypi
+npm目录：/usr/lib/node_modules/npm
 
 ### Nginx
 Nginx vhost configuration file: /etc/nginx/conf.d/default.conf
