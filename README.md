@@ -71,10 +71,8 @@ ParseServer IP 访问显示 `{"error":"unauthorized"}`
 /etc/nginx/conf.d/default.conf
 
 # Parse Dashboard 配置
-/etc/parse-server/parse-dashboard.json
+/etc/parse-server/parse-dashboard.json  # serverURL 填写 Parse-server的域名
 
-# Parse Server配置
-/etc/parse-server/parse-server.json
 ```
 
 
