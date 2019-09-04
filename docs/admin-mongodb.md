@@ -2,8 +2,8 @@
 
 Parse Server deployment package includes MongoDB and Web-GUI tool adminMongo for MongoDB management, refer to these steps to use it:
 
-1. Log in Cloud Console, make sure the **TCP:9090 and 14017** port is allowed on **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)**
-2. Using the Chrome or FireFox to visit URL *http://Internet IP:9090* for adminMongo
+1. Log in Cloud Console, make sure the **TCP:9091 and 14017** port is allowed on **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)**
+2. Using the Chrome or FireFox to visit URL *http://Internet IP:9091* for adminMongo
   ![adminMongo GUI](https://libs.websoft9.com/Websoft9/DocsPicture/en/mongodb/adminmongo/adminmogo-sconnect-websoft9.png)
 3. Refer to the samples below and **Create Connection**, get database credentials [from here](/stack-accounts.md)
    ```
