@@ -18,22 +18,29 @@ apt update && apt upgrade -y
 
 #For Centos&Redhat
 yum update -y
+
+# NPM Update
+npm install npm@latest -g
+
+# Node.js Update
+npm cache clean -f
+npm install -g n
 ```
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
 
 
 ## Parse Server 升级
 
-Parse Server 有升级包的时候，后台会及时给出提示。参考下面的步骤完成升级：
+Parse Server 采用 NPM 来管理升级
 
-1. Parse Server 后台->设置->升级，如果有新的升级包，系统会给与提示
-![Parse Server 升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereminder-websoft9.png)
+```
+npm update -g  parse-server
+```
 
-2. 点击“更新”按钮后，系统会跳转到Parse Server 官方的安装页面。
-3. 我们提供的部署包采用的是jar包安装模式，因此在安装页面我们选择“Custom install”模式，
-![Parse Server 升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
+## Parse Dashboard 升级
 
-3. 下载Parse Server .jar包后，上传到服务器 `/data/wwwroot/metabase`, 覆盖已有的同名文件
-![Parse Server 升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
+Parse Dashboard 采用 NPM 来管理升级
 
-4. 重新加载Parse Server ，升级成功
+```
+npm update -g  parse-dashboard
+```

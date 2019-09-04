@@ -29,12 +29,10 @@ sudo systemctl restart nginx
 sudo systemctl status nginx
 ```
 
-### MySQL
+### MongoDB
 
 ```shell
-sudo systemctl start mysql
-sudo systemctl stop mysql
-sudo systemctl restart mysql
-sudo systemctl status mysql
-```
-
+sudo systemctl start mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+sudo systemctl status mongod

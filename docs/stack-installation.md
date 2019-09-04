@@ -6,42 +6,32 @@ If you have completed the Parse Server  deployment on Cloud Platform, the follow
 
 1. Get the **Internet IP** on your Cloud Platform
 2. Check you **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console to ensure the TCP:80 is allowed
-3. Make a domain resolution on your DNS Console if you want to use domain for Parse Server 
+3. Complete the Domain name resolution for Parse Server and Parse Dashboard on your DNS Console  
+e.g. *parseserver.yourdomain.com* and *parsedashboard.yourdomain.com*
+
+## Domain binding
+
+Since Parse cannot be visited by IP, so your should bind Domain name for it first  
+Refer to [Domain binding](/solution-more.md#domain-binding) to complete it now
 
 ## Parse Server  Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://domain name* or *http://Internet IP*, you will enter the register interface of Parse Server 
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-start-websoft9.png)
-2. You may wait for 1-3 Minutes for the loading of Parse Server 
-![Start Parse Server ](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-starty-websoft9.png)
+1. Using local Chrome or Firefox to visit the URL *http://domain name*, go to login Parse Dashboard 
+   ![Parse Dashboard login](https://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/ParseServer-loginpage-websoft9.png)
 
-3. Click the **Let's get started** button and set your administrator account, then go to next step
-4. Add your data: you can select the type of Database which will be analyzed or  click **I'll add my data later** then Parse Server  will create a Demo from H2 Database
-![Add data to Parse Server ](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-installdb-websoft9.png)
+2. Input username and password([view credentials](/stack-accounts.md)) and go to the Console page
+   ![Parse Dashboard console gui](https://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/parse-backend-websoft9.png)
 
-5. Once you have completed the installation, click the button **Take me to Parse Server ** to log in Parse Server  Console
-![Parse Server  installation successful](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-installss-websoft9.png)
+3. Suggest you to [modify the Parse Dashboard's password](/solution-more.md#modify-parse-dashboard-credentials) now
 
-6. Take the H2 demo data as an example to start data analysis work.
-![Parse Server  H2](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-dashborad-websoft9.png)
-
-7. Log in Parse Server  Console, go to **Parse Server  Admin** page like below
-![Parse Server  Admin](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-admin-websoft9.png)
-
-8. Click **Add a database** to add a new data source for Parse Server 
-![Parse Server  Data source](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-adddb-websoft9.png)
-
-9. Click **People** tab on the top of Parse Server  Admin, you can add user and modify password
-![Parse Server  People](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-users-websoft9.png)
-
-> More useful Parse Server  guide, please refer to [Parse Server  Documentation](https://metabase.com/docs/latest/)
+> More useful Parse Server guide, please refer to [Parse Server Documentation](https://docs.parseplatform.org)
 
 ## Q&A
 
-#### I can't visit the start page of Parse Server ?
+#### Visit http://Internet IP, get the message "error":"unauthorized" ?
 
-Your TCP:80 of Security Group Rules is not allowed so there no response from Chrome or Firefox
+Parse cannot be visited by IP, so your should [bind Domain name](/solution-more.md#domain-binding) for it first  
 
-#### Which database does this Parse Server  use?
+#### Which database does this Parse Server use?
 
-MySQL
+MongoDB

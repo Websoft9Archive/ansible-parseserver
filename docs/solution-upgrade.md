@@ -16,27 +16,34 @@ For Parse Server  maintenance, focus on the following two Update & Upgrade jobs
 Run an update command to complete the system update:
 
 ``` shell
-#For Ubuntu
+#For Ubuntu system
 apt update && apt upgrade -y
 
-#For Centos&Redhat
+#For Centos&Redhat system
 yum update -y
+
+# NPM Update
+npm install npm@latest -g
+
+# Node.js Update
+npm cache clean -f
+npm install -g n
+
 ```
 > This deployment package is preconfigured with a scheduled task for automatic updates. If you want to remove the automatic update, please delete the corresponding Cron
 
 ## Parse Server  Upgrade
 
-Follow the steps below to complete the upgrade:
+Parse Server uses NPM to manage upgrades
 
-1. Log in Parse Server , go to Admin->Setting->Updates, the system will give you a reminder if there is a new upgrade package
-![Parse Server  updates reminder](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-updatereminder-websoft9.png)
+```
+npm update -g  parse-server
+```
 
-2. Click the **Upgrade** button, go to the [Parse Server  Install](https://metabase.com/start/) page
+## Parse Dashboard Upgrade
 
-3. The deployment package we provide is in the jar package installation mode, so on the installation page we select the **Custom install** mode.
-![Parse Server  install](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatedl-websoft9.png)
+Parse Dashboard uses NPM to manage upgrades
 
-3. Download teh Parse Server .jar pakage and upload to your instance's directory `/data/wwwroot/metabase`
-![Parse Server  upload](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-updatereplace-websoft9.png)
-
-4. Overwrite existing files and reload the Parse Server 
+```
+npm update -g  parse-dashboard
+```

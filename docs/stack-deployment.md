@@ -13,7 +13,7 @@ We offer two deployment Parse Server  scenarios (the deployment results are the 
 
 For users with experience with cloud servers, Deploy by Image equated with "one-click deployment".
 
-Websoft9 published [Parse Server  image](https://apps.websoft9.com/metabase) on Cloud Platform, three methods for your deployment:
+Websoft9 published [Parse Server  image](https://apps.websoft9.com/parse) on Cloud Platform, three methods for your deployment:
 
 * When **Create New Instance** , select the Parse Server  image as the system boot template.
 * When **Subscribe Parse Server ** on Marketplace, the system will promote you to create a new instance for this image at the same time.
@@ -23,7 +23,7 @@ Websoft9 published [Parse Server  image](https://apps.websoft9.com/metabase) on 
 
 **Deploy by Script** means running a script on your cloud instance to pull the pre-packages online to your instance and configure it at the same time.
 
-Websoft9 provide the [Parse Server  ansbile automation script](https://github.com/Websoft9/ansible-metabase) on Github. If you are familiar with Ansible, you can deploy the Parse Server  to the instance automaticly.
+Websoft9 provide the [Parse Server  ansbile automation script](https://github.com/Websoft9/ansible-parse-server) on Github. If you are familiar with Ansible, you can deploy the Parse Server  to the instance automaticly.
 
 ## Comparison
 

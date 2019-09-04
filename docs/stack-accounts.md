@@ -2,17 +2,20 @@
 
 These accounts are required for Parse Server  image installation and configuration
 
-## Parse Server 
+## Parse Dashboard 
 
-Administrator account is set by yourselft at the time of Parse Server  installation wizard
+Administrator username is: `admin`  
+Administrator password is: `admin`  
 
-## MySQL
+Suggest you to [modify the Parse Dashboard's password](/solution-more.md#modify-parse-dashboard-credentials) as soon as possible
+
+## MongoDB
 
 * Administrator username: *`root`*
 * Administrator password: stored in the file of your server instance: */credentials/password.txt*. You use the **online SSH interface on Cloud Console** and run the command `cat /credentials/password.txt` to get the database password
-   ![Run the cat command](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
+   ![Run the cat command](https://libs.websoft9.com/Websoft9/DocsPicture/en/common/catdbpasswordmongdo-websoft9.png)
 
-> If you want to log in MySQL, refer to [MySQL Web interface Management](/admin-mysql.md)
+> If you want to log in MongoDB, refer to [MongoDB Web interface Management](/admin-mongodb.md)
 
 ## Linux
 

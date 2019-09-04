@@ -20,7 +20,7 @@ Parse Server 提供的基础功能包括:
 - 与云平台很好的对接
 - 自定义业务逻辑与Hook机制
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/dashboard.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/dashboard.png)
 
 ---
 

@@ -1,42 +1,45 @@
 # FAQ
 
-#### Parse Server  support multi-language?
+#### What the different between Parse and Parse Server?
 
-Yes
+Parse is a Serverless Paas which was stop opretion now. Parse Server is opensoure project to replace Parse and you can deploy it on your Cloud Server
 
-#### Where is the database connection configuration of Parse Server ?
+#### How to modify the Parse Dashboard's credentials?
 
-Database configuration information in *metabase.conf* in the Parse Server  installation directory, [refer to the installation directory](/stack-components.md#metabase)
+Refer to [modify the Parse Dashboard's password](/solution-more.md#modify-parse-dashboard-credentials) 
 
-#### If there is no domain name, can I deploy Parse Server ?
+#### What SDKs does Parse Server provide?
 
-Yes, visit Parse Server  by *http://Internet IP*
+IOS, Android, JavaScript, .NET + Xamarin, PHP, Arduino, Embedded C等 
+
+#### Where is the database connection configuration of Parse Server?
+
+Database configuration information in *parse-server.json* in the [Parse Server installation directory](/stack-components.md#parse-server)
+
+#### Where is the database connection configuration of Parse Dashboard? 
+
+Parse Dashboard not need Database, its use text file for data storage
+
+#### If there is no Domain name, can I deploy Parse Server ?
+
+No, you should bind Domain name fist
 
 #### What is the password for the database root user?
 
 The password is stored in the server related file: `/credentials/password.txt`
 
-#### Is there a web-base GUI database management tools?
+#### Is there a web-base GUI database management tools for MongoDB?
 
-Yes, phpMyAdmin is on it, visit by http://Internet IP:9090
+Yes, adminMongo is on it, visit by http://Internet IP:9091
 
-#### How to disable phpMyAdmin access?
+#### How to disable adminMongo access?
 
-Disable port 9090 of the server security group
+Disable port 9091 and 27017 of the server security group
 
 #### Is it possible to modify the source path of Parse Server ?
 
-Yes, modify it by [Nginx vhost configuration file](/stack-components.md)
+No, you can't modify it
 
-#### How to change the permissions of filesytem?
-
-Change owner(group) or permissions like below:
-
-```shell
-chown -R nginx.nginx /data/wwwroot
-find /data/wwwroot -type d -exec chmod 750 {} \;
-find /data/wwwroot -type f -exec chmod 640 {} \;
-```
 #### What's the difference between Deployment and Installation?
 
 - Deployment is a process of installing and configuring a sequence of software in sequence in a different order, which is a complex system engineering.  

@@ -5,10 +5,19 @@ These commands you must know when you using the Parse Server  of Websoft9
 ### Parse Server 
 
 ```shell
-sudo systemctl start metabase
-sudo systemctl stop metabase
-sudo systemctl restart metabase
-sudo systemctl status metabase
+sudo systemctl start parse-server
+sudo systemctl stop parse-server
+sudo systemctl restart parse-server
+sudo systemctl status parse-server
+```
+
+### Parse Dashboard
+
+```shell
+sudo systemctl start parse-dashboard
+sudo systemctl stop parse-dashboard
+sudo systemctl restart parse-dashboard
+sudo systemctl status parse-dashboard
 ```
 
 ### Nginx
@@ -23,16 +32,8 @@ sudo systemctl status nginx
 ### MySQL
 
 ```shell
-sudo systemctl start mysql
-sudo systemctl stop mysql
-sudo systemctl restart mysql
-sudo systemctl status mysql
-```
-
-### Docker
-```shell
-sudo systemctl star docker
-sudo systemctl stop docker
-sudo systemctl restart docker
-sudo systemctl status docker
+sudo systemctl start mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+sudo systemctl status mongod
 ```

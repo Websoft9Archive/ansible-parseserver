@@ -10,9 +10,11 @@ If you want to use a free certificate, just run the one command `certbot` on you
 
 If you have applied for a commercial certificate, complete the HTTPS configuration in just three steps:
 
+> Parse Server and Parse Dashboard need different Domain, so configure HTTPS separately for them
+
 1. Upload your certificate to the directory of your instance: */data/cert* 
 2. Edit the vhost configuration file: */etc/nginx/conf.d/default.conf* 
-3. Insert the **HTTPS template** into *server{  }* and modify to your certificate path
+3. Insert the **HTTPS template** into ***server{  }*** and modify to your certificate path
    ``` text
    #-----HTTPS template start------------
    listen 443 ssl; 

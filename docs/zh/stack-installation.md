@@ -17,11 +17,11 @@
 
 ## Parse Server 安装向导
 
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名*  就进入了软件的引导首页
-![Parse Dashboard 登录](http://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/ParseServer-loginpage-websoft9.png)
+1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名*  就进入 Parse Dashboard 登录页面
+![Parse Dashboard 登录](https://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/ParseServer-loginpage-websoft9.png)
 
 2. 输入账号和密码（[查看](/zh/stack-accounts.md)），登录后的界面如下
-![Parse Dashboard 后台界面](http://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/parse-backend-websoft9.png)
+![Parse Dashboard 后台界面](https://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/parse-backend-websoft9.png)
 
 3. 修改 Parse Dashboard 的密码（[参考](/zh/solution-more.md#修改-parse-dashboard-账号密码)）
 

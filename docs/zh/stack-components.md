@@ -48,8 +48,8 @@ MongoDB 可视化管理地址: *http://服务器公网IP:9090*，用户名和�
 | --- | --- | --- | --- |
 | HTTP | 80 | 通过http访问Parse Server, Parse Dashboard | 必须 |
 | HTTPS | 443 | 通过https访问Parse Server, Parse Dashboard   | 可选 |
-| MongoDB | 27017 | 远程连接MySQL | 可选 |
-| adminMongo on Docker | 9090 | 可视化管理MongoDB | 可选 |
+| MongoDB | 27017 | 远程连接MongoDB | 可选 |
+| adminMongo on Docker | 9091 | 可视化管理MongoDB | 可选 |
 
 ## 版本号
 

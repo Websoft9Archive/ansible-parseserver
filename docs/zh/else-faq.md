@@ -1,24 +1,28 @@
 # FAQ
 
-#### Parse Server 与 Parse 有什么区别？
+#### Parse 与 Parse Server 有什么区别？
 
-支持多语言（包含中文），系统默认根据浏览器自动选择语言 
+Parse是一个在线的 Serverless 托管平台，现已停止运营。Parse Server 是开源 Parse 的功能，由用户自行下载部署到服务器的开源项目。
 
 #### 如何修改Parse Dashboard 的密码？
 
 修改 Parse Dashboard 的密码（[参考](/zh/solution-more.md#修改-parse-dashboard-账号密码)）
 
-#### Parse Server 支持多语言吗？
+#### Parse Server 提供了哪些SDK？
 
-支持多语言（包含中文），系统默认根据浏览器自动选择语言 
+IOS, Android, JavaScript, .NET + Xamarin, PHP, Arduino, Embedded C等 
 
 #### Parse Server 数据库连接配置信息在哪里？
 
-数据库配置信息在Parse Server 安装目录下的 *metabase.conf* 中，[查阅安装目录路径](/zh/stack-components.md#metabase)
+数据库配置信息在Parse Server 安装目录下的 *parse-server.json* 中，[查阅安装目录路径](/zh/stack-components.md#parse-server)
+
+#### Parse Dashboard 数据库连接配置信息在哪里？ 
+
+Parse Dashboard 不需要数据库支持，数据存储在文本文件中
 
 #### 如果没有域名是否可以部署 Parse Server ？
 
-可以，访问`http://服务器公网IP` 即可
+不可以，必须[绑定域名](/zh/solution-more.md#域名绑定)
 
 #### 数据库 root 用户对应的密码是多少？
 
@@ -26,23 +30,16 @@
 
 #### 是否有可视化的数据库管理工具？
 
-有，内置phpMyAdmin，访问地址：http://服务器公网IP:9090
+有，内置adminMongo，访问地址：http://服务器公网IP:9090
 
-#### 如何禁止phpMyAdmin访问？
+#### 如何禁止 adminMongo 访问？
 
 关闭服务器安全组的9090端口即可禁止
 
 #### 是否可以修改Parse Server 的源码路径？
 
-可以，通过修改 [Nginx 虚拟主机配置文件](/zh/stack-components.md)中相关参数
+不支持修改
 
-#### 如何修改上传的文件权限?
-
-```shell
-chown -R nginx.nginx /data/wwwroot/metabase
-find /data/wwwroot/metabase -type d -exec chmod 750 {} \;
-find /data/wwwroot/metabase -type f -exec chmod 640 {} \;
-```
 #### 部署和安装有什么区别？
 
 部署是将一序列软件按照不同顺序，先后安装并配置到服务器的过程，是一个复杂的系统工程。  
