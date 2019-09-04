@@ -1,6 +1,6 @@
 server {
   listen 80;
-  server_name parse-server.example.com;
+  server_name parse-server.example.com;  #  Parse Server domain
 
   location / {
     proxy_set_header X-Real-IP $remote_addr;
@@ -15,7 +15,7 @@ server {
 
 server {
   listen 80;
-  server_name parse-dashboard.example.com;
+  server_name parse-dashboard.example.com;  #  Parse Dashboard domain
 
   location / {
     proxy_set_header X-Real-IP $remote_addr;
