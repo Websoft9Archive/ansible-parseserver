@@ -1,7 +1,7 @@
 #!/bin/bash
 
 reg="[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?"
-
+X
 i=0
 while [ 0 -eq $i ]
 do
@@ -12,6 +12,7 @@ do
     sed -i "s/parse-server.example.com/$domain1/" /etc/nginx/conf.d/default.conf
     sed -i "s/parse-dashboard.example.com/$domain2/" /etc/nginx/conf.d/default.conf
     sed -i "s/parse-server.example.com/$domain1/" /etc/parse-server/parse-dashboard.json
+    sed -i '1,11d' /etc/nginx/conf.d/default.conf
     systemctl restart nginx
     systemctl restart parse-dashboard
     i=1
