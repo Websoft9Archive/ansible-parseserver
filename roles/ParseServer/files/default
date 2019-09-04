@@ -1,5 +1,16 @@
 server {
   listen 80;
+  server_name _;
+  index README.txt;
+  charset utf-8;
+  location / {
+    root /data/wwwroot;
+  }
+}
+
+
+server {
+  listen 80;
   server_name parse-server.example.com;  #  Parse Server domain
 
   location / {
