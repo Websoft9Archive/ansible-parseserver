@@ -63,6 +63,19 @@
     src: default
     dest: /etc/nginx/conf.d/default.conf
 
+- name: Create default site dir
+  file:
+    path: /data/wwwroot/
+    state: directory
+    owner: www-data
+    group: www-data
+
+- name: set default site
+  copy: 
+    src: README.txt
+    dest: /data/wwwroot/
+
+
 - name: restart nginx
   service: name=nginx state=restarted enabled=yes
 
