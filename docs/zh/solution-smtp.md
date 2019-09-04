@@ -15,7 +15,7 @@
    SMTP username: websoft9@163.com
    SMTP password: #wwBJ8    //此密码不是邮箱密码，是需要通过163邮箱后台设置去获取的授权码
    ```
-2. 登录 Metabase控制台
+2. 登录 Parse Server 控制台
 3. 填写 SMTP 参数
 ![Parse Server  SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-smtp-websoft9.png)
 4. 点击【Test Connection】

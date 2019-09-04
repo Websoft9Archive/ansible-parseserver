@@ -1,48 +1,38 @@
 # 初始化安装
 
-在云服务器上部署 Parse Server  预装包之后，请参考下面的步骤快速入门。
+在云服务器上部署 Parse Server 预装包之后，请参考下面的步骤快速入门。
 
 ## 准备
 
 1. 在云控制台获取您的 **服务器公网IP地址** 
 2. 在云控制台安全组中，检查 **Inbound（入）规则** 下的 **TCP:80** 端口是否开启
-3. 若想用域名访问 Parse Server ，请先到 **域名控制台** 完成一个域名解析
+3. 在 **域名控制台** 完成两个域名解析，分别对应 Parse Server 和 Parse Dashboard 两个核心模块  
+例如：*parseserver.yourdomain.com* 和 *parsedashboard.yourdomain.com* 
 
-## Parse Server  安装向导
+## 绑定域名
 
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入了软件的引导首页
-![Metabase初始化页面](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-start-websoft9.png)
+由于本项目不可以通过IP访问，因此绑定域名操作是能否正常运行本项目的关键。  
 
-2. 软件的加载速度比较慢，耐心等待1-3分钟，直至出现如下的界面。
-![开始安装Metabase](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-starty-websoft9.png)
+请参考 [绑定域名](/zh/solution-more.md#域名绑定) 完成绑定操作。
 
-3. 点击“让我们开始吧”，接下来首先设置登录账号，完成后进入下一步
-4. 添加你的数据：可以选择使用的数据类型来连接一个需要分析的外部数据库，如果没有也可以点击“我之后再添加”，这样系统会默认给 Parse Server  增加一个H2演示数据
-![配置Metabase](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-installdb-websoft9.png)
+## Parse Server 安装向导
 
-5. 安装成功后的界面，点击“带我去Metabase”登录后台
-![Metabase安装成功](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-installss-websoft9.png)
+1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名*  就进入了软件的引导首页
+![Parse Dashboard 登录](http://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/ParseServer-loginpage-websoft9.png)
 
-6. 以H2演示数据为例，开始数据分析工作
-![Parse Server  H2演示](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-dashborad-websoft9.png)
+2. 输入账号和密码（[查看](/zh/stack-accounts.md)），登录后的界面如下
+![Parse Dashboard 后台界面](http://libs.websoft9.com/Websoft9/DocsPicture/en/parseserver/parse-backend-websoft9.png)
 
-7. Metabase有强大的系统管理能力：后台->设置，进入系统管理界面
-![Parse Server  Admin](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-admin-websoft9.png)
+3. 修改 Parse Dashboard 的密码（[参考](/zh/solution-more.md#修改-parse-dashboard-账号密码)）
 
-8. 通过“添加一个数据库”来增加一个数据分析源
-![Parse Server  增加数据库](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-adddb-websoft9.png)
-
-9. 通过点击“人员管理”标签，管理使用Metabase用户，包括增加用户、修改密码等
-![Parse Server  人员管理](https://libs.websoft9.com/Websoft9/DocsPicture/zh/metabase/metabase-users-websoft9.png)
-
-> 需要了解更多Metabase的使用，请参考官方文档：[Parse Server  Documentation](https://metabase.com/docs/latest/)
+> 需要了解更多 Parse 的使用，请参考官方文档：[Parse Server Documentation](https://docs.parseplatform.org/)
 
 ## 常见问题
 
-#### 浏览器打开IP地址，无法访问 Parse Server （白屏没有结果）？
+#### 浏览器打开IP地址，出现 "error":"unauthorized" ？
 
-您的服务器对应的安全组80端口没有开启（入规则），导致浏览器无法访问到服务器的任何内容
+本项目不支持IP访问，需要 **[绑定域名](/zh/solution-more.md#域名绑定)** 方可使用
 
-#### 本部署包采用的哪个数据库来存储 Parse Server  数据？
+#### 本部署包采用的哪个数据库来存储 Parse Server 数据？
 
-是MySQL
+MongoDB

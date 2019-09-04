@@ -1,16 +1,20 @@
 # FAQ
 
-#### Metabase支持多语言吗？
+#### Parse Server 与 Parse 有什么区别？
 
 支持多语言（包含中文），系统默认根据浏览器自动选择语言 
 
-#### Metabase支持多语言吗？
+#### 如何修改Parse Dashboard 的密码？
+
+修改 Parse Dashboard 的密码（[参考](/zh/solution-more.md#修改-parse-dashboard-账号密码)）
+
+#### Parse Server 支持多语言吗？
 
 支持多语言（包含中文），系统默认根据浏览器自动选择语言 
 
-#### Metabase数据库连接配置信息在哪里？
+#### Parse Server 数据库连接配置信息在哪里？
 
-数据库配置信息在Metabase安装目录下的 *metabase.conf* 中，[查阅安装目录路径](/zh/stack-components.md#metabase)
+数据库配置信息在Parse Server 安装目录下的 *metabase.conf* 中，[查阅安装目录路径](/zh/stack-components.md#metabase)
 
 #### 如果没有域名是否可以部署 Parse Server ？
 
@@ -28,7 +32,7 @@
 
 关闭服务器安全组的9090端口即可禁止
 
-#### 是否可以修改Metabase的源码路径？
+#### 是否可以修改Parse Server 的源码路径？
 
 可以，通过修改 [Nginx 虚拟主机配置文件](/zh/stack-components.md)中相关参数
 
