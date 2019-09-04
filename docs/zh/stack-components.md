@@ -1,43 +1,61 @@
 # 参数
 
-## 组件及路径
+Parse Server  预装包包含 Parse Server  运行所需一序列支撑软件（简称为“组件”），下面列出主要组件名称、安装路径、配置文件地址、端口、版本等重要的信息。
 
-Neo4j部署包中不仅仅只有Neo4j本身，还包含一序列支持Neo4j运行所需的其他软件（这里称之为组件），下面列出主要组件名称、安装路径、配置文件地址等重要的信息：
+## 路径
 
-### Neo4j
+### Parse Server 
 
-Neo4j安装目录: /data/wwwroot/scratch/build
-Neo4j配置文件目录: /etc/neo4j/neo4j.conf
-数据存储目录: /var/lib/neo4j
+Parse Server  安装目录： */data/wwwroot/metabase*  
+Parse Server  配置文件： */data/wwwroot/metabase/metabase.conf*  
 
-### Java
-Java安装目录：/usr/lib/jvm
+> Parse Server  配置文件中包含数据库连接信息，更改了 MySQL 数据库账号密码，此处也需要对应修改
 
+### Parse Dashboard
+
+### Node.js
+
+Java Directory: */usr/lib/jvm*
 
 ### Nginx
-Nginx vhost configuration file: /etc/nginx/conf.d/default.conf
-Nginx configuaration file: /etc/nginx/nginx.conf
-Nginx logs file: /var/log/nginx/
+
+Nginx 虚拟主机配置文件：*/etc/nginx/sites-available/default.conf*  
+Nginx 主配置文件： */etc/nginx/nginx.conf*  
+Nginx 日志文件： */var/log/nginx/*
+
+### MongoDB
+
+MySQL 安装路径: */usr/local/mysql*  
+MySQL 数据文件 */data/mysql*  
+MySQL 配置文件: */etc/my.cnf*    
+MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
+
 
 ## 端口号
 
-下面是您在使用本镜像过程中，需要用到的端口号，请通过云控制台安全组进行设置
+下面是您在使用本镜像过程中，需要用到的端口号，请通过 [云控制台安全组](https://support.websoft9.com/docs/faq/zh/tech-instance.html)进行设置
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| HTTP | 80 | 通过http访问Neo4j | 必须 |
-| HTTPS | 443 | 通过https访问Neo4j | 可选 |
-| neo4j | 7687 | neo4j WebSocke | 必选 |
+| MySQL | 3306 | 远程连接MySQL | 可选 |
+| HTTP | 80 | 通过http访问Metabase | 必须 |
+| HTTPS | 443 | 通过https访问Metabase | 可选 |
+| phpMyAdmin on Docker | 9090 | 可视化管理MySQL | 可选 |
 
 ## 版本号
 
-组件对应的基本版本号可以通过云市场商品页面查看，但部署到您的服务器之后，版本会有一定的升级，故更为精准的版本请通过在服务器上运行命令查看：
+组件版本号可以通过云市场商品页面查看。但部署到您的服务器之后，组件会自动进行更新导致版本号有一定的变化，故精准的版本号请通过在服务器上运行命令查看：
 
 ```shell
-Nginx version:
+# Java Version
+java --version
+
+# Nginx version:
 nginx -v
 
-OpenJDK:
-java -version
+# MySQL version:
+mysql -V
 
+# Dokcer:
+docker --version
 ```
