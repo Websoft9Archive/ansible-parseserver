@@ -2,8 +2,8 @@
 
 Parse Server 预装包中内置 MongoDB 及可视化数据库管理工具 `adminMongo` ，使用请参考如下步骤：
 
-1. 登录云控制台，[开启服务器安全组9090和47017端口](https://support.websoft9.com/docs/faq/zh/tech-instance.html)
-2. 本地浏览器 Chrome 或 Firefox 访问：*http://服务器公网IP:9090*，进入adminMongo
+1. 登录云控制台，[开启服务器安全组9091和47017端口](https://support.websoft9.com/docs/faq/zh/tech-instance.html)
+2. 本地浏览器 Chrome 或 Firefox 访问：*http://服务器公网IP:9091*，进入adminMongo
   ![adminMongo界面](https://libs.websoft9.com/Websoft9/DocsPicture/en/mongodb/adminmongo/adminmogo-sconnect-websoft9.png)
 3. 参考下面的范例，新建一个【Connection】。其中的IP地址是服务器公网IP，数据库账号[此处获取](/zh/stack-accounts.md)
    ```
