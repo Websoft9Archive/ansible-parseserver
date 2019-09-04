@@ -12,7 +12,7 @@ do
     sed -i "s/parse-server.example.com/$domain1/" /etc/nginx/conf.d/default.conf
     sed -i "s/parse-dashboard.example.com/$domain2/" /etc/nginx/conf.d/default.conf
     sed -i "s/parse-server.example.com/$domain1/" /etc/parse-server/parse-dashboard.json
-    sed -i '1,11d' /etc/nginx/conf.d/default.conf
+    sed -i '1,10d' /etc/nginx/conf.d/default.conf
     systemctl restart nginx
     systemctl restart parse-dashboard
     i=1
