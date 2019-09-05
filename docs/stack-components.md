@@ -49,7 +49,7 @@ These Ports is need when use Parse Server, refer to [Safe Group Setting on Cloud
 | HTTP | 80 | HTTP requests for Parse Server  | Required |
 | HTTPS | 443 | HTTPS requests Parse Server  | Optional |
 | MongoDB | 20217 | Remote connect MongoDB | Optional |
-| adminMongo on Docker | 9090 | Web managment GUI for MongoDB | Optional |
+| adminMongo on Docker | 9091 | Web managment GUI for MongoDB | Optional |
 
 ## Version
 
