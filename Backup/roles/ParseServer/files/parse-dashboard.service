@@ -1,0 +1,16 @@
+[Unit]
+Description=Parse Dashboard
+After=network.target
+After=parse-server.service
+Requires=parse-server.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/parse-dashboard  --config /etc/parse-server/parse-dashboard.json --allowInsecureHTTP
+TimeoutStartSec=3600
+Restart=always
+RestartSec=10
+
+
+[Install]
+WantedBy=parse-server.service

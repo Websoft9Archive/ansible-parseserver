@@ -1,11 +1,15 @@
+- name: Get mongodb root Default Password
+  shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
+  register: mongodb_password 
+
 - name: Create databases
   mongodb_user:
     login_user: root
-    login_password: '{{mongodb_root_password}}'
+    login_password: '{{mongodb_password.stdout}}'
     database: parse
     name: parse
     state: present
-    password: "{{mongodb_root_password}}"
+    password: websoft9
     roles: readWrite
 
 - name: Install Parse Server and Parse Dashboard
@@ -15,6 +19,7 @@
   file:
     path: /etc/parse-server
     state: directory
+
     
 - name: mkdir parse-server Log
   file:
@@ -42,7 +47,7 @@
     src: parse-dashboard.json.jinja2
     dest: /etc/parse-server/parse-dashboard.json
 
-- name: Configuration Parse Dashboard service
+- name: Configuration Parse Dashboard systemctl
   copy:
     src: parse-dashboard.service
     dest: /lib/systemd/system/
@@ -70,5 +75,32 @@
     src: README.txt
     dest: /data/wwwroot/
 
+
 - name: restart nginx
   service: name=nginx state=restarted enabled=yes
+
+- name: Write Databases Password
+  template:
+    src: password.txt.jinja2
+    dest: /credentials/password.txt
+    mode: 644
+
+- name: Write rc.local
+  shell: echo "#!/bin/bash" > /etc/rc.local
+
+- name: restart rc.local
+  service: name=rc.local state=restarted enabled=yes
+
+
+- name: Databases Random Password
+  template: 
+    src: init.sh.jinja2
+    dest: /root/init.sh
+    mode: 0750
+
+- name: Setting Startup
+  lineinfile:
+    path: /etc/rc.local
+    regexp: '/root/init.sh'
+    line: '/root/init.sh'
+    mode: 0750
